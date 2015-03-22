@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+<meta name="color:Background" content="#ffffaf" />
+<meta name="color:Posts Background" content="#ffffff" />
+<meta name="font:Default Font" content="Helvetica" />
+<meta name="font:Heading Font" content="Helvetica" />
+<meta name="font:Post Font" content="Times New Roman" />
+<meta name="color:Posts Text Color" content="#ffffaf" />
+<meta name="color:Links Color" content="#ffffaf" />
+
+<meta name="if:Social Bookmarks" content="1" />    <!-- boolean -->
+<meta name="if:Show Tags" content="1" />    <!-- boolean -->
+<meta name="if:Toggle Posting Date" content="1" />  
+<meta name="if:Jump Pagination On" content="1" />
+
+<meta name="text:Twitter Username" content="" />   <!-- content -->
+<meta name="text:Facebook Page" content="" />   <!-- content -->
+
+<link rel="stylesheet" href="skeleton.css" />
+<style>
+
+/****************************************/
+/******** Start of my CSS Styles ********/
+/****************************************/
+
+/*CSS Stylesheet - Main Layout - Applies to all common site (template) element selectors and definitions*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+}
+/* main design used - for computer screen size */
+#realtorname {
+	font-size: 0.6em; 
+	font-style: italic;
+	padding-left: 100px;
+}
+/* #container header p { */
+#secondheadingline {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/* #container header p span { */
+#validator {
+	font-size: 0.8em;
+	padding-left:  50px;
+}
+header {
+	height: auto;
+	z-index: 1;
+}
+header h1 {
+	font-size: 2em;
+	font-weight: bold;
+	padding-top: 45px;
+	margin-bottom: 11px;
+}
+header img {
+	float: left;
+	max-width: 100%;
+}
+
+/*******************************************/
+/* main menu                               */
+/*******************************************/
+nav ul {
+	padding: 0px;
+	margin: 0px;
+	z-index: 10;
+}
+nav ul li {
+	display: inline;
+	float: left;
+	width: 150px;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	height: 30px;
+	z-index: 10;
+	margin-bottom: 0px;
+}
+nav ul li a {
+	background-color: #808080;
+	color: #FFFFFF;
+	text-decoration: none;
+	line-height: 30px;
+	width: 142px;
+	display: block;
+	padding-left: 8px;
+	z-index: 10;
+}
+#navbar {
+	background-color: #808080;
+}
+nav ul li a:hover {
+	background-color: #666666;
+	color: #FFFFFF;
+	z-index: 10;
+}
+nav ul li ul li a {
+	background-color: #666666;
+	z-index: 10;
+}
+nav ul li ul li a:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	z-index: 10;
+}
+nav ul li ul {
+	visibility: hidden;
+}
+nav ul li:hover ul {
+	visibility: visible;
+	z-index: 10;
+}
+
+/** Blog Site content specific formatting **/
+/*******************************************/
+body {
+	background: {color:Background};
+	font-family: {font:Default Font};
+}
+.post {
+	background: {color:Posts Background};
+	margin: 40px auto;
+	padding: 20px;
+	font-family: {font:Post Font};
+}
+.post > img {
+	width: 100%;
+}
+.post p, .post li, .post blockquote {
+	color: {color:Posts Text Color};
+}
+.like-reblog {
+	list-style: none;
+	border: 1px solid #ccc;
+}
+.like-reblog li {
+	float: right;
+	padding: 6px;
+	height: 20px;
+} 
+.tags > li {
+display:  inline;
+}
+a {
+    color: {color:Links Color};
+}
+.post {
+ border-radius: 6px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<header>
+		<div class="row">
+			<div class="two columns">
+				<img alt="slasher realty pros" src="../images/houses-real-estate-logo-vector-1270925.jpg">
+			</div> <!-- /.two.columns -->
+			<div class="eight columns">
+				<h1>Slasher 
+				Realty Pros<span id="realtorname" > 
+				John Elash &amp; Velma Zak</span></h1>
+				<p id="secondheadingline">The # 1 Real Estate Team - Serving Vancouver and the Lower Mainland<span id="validator"><a href="http://validator.w3.org/check?uri=referer">W3C Validate</a></span>
+				</p>
+			</div> <!-- /.ten.columns -->
+			<div class="two columns">
+				{block:IfSocialBookmarks}
+					{block:IfTwitterUsername}
+					<p>Follow me on Twitter: 
+					<a href="http://twitter.com/{text:Twitter Username}">@{text:Twitter Username}</a> </p>
+					{/block:IfTwitterUsername}
+					
+					{block:IfFacebookPage}
+					<p>Facebook: 
+					<a href="{text:Facebook Page}">John Elash</a> </p>
+					{/block:IfFacebookPage}
+				{/block:IfSocialBookmarks}
+			</div> <!-- /.two.columns -->
+		</div> <!-- /.row -->
+
+		</header>
+		<!-- END header -->
+	</div> <!-- /.row -->
+
+	<div class="row">
+	<div class="twelve columns" id="navbar">
+		<nav>
+		   <ul id="mynavmenu">
+				<li><a href="http://students.thenet.ca/jelash/week07/index.html">COMP1950 Home</a></li>
+				<li><a href="http://jelash.tumblr.com">News</a></li>
+				<li><a href="#">Future Menu Item</a>
+					<ul>
+						<li><a href="#">Child Item One</a></li>
+						<li><a href="#">Child Item Two</a></li>
+						<li><a href="#">Child Item Three</a></li>
+						<li><a href="#">Child Item Four</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Future Menu Item</a>
+					<ul>
+						<li><a href="#">Item Sub One</a></li>
+						<li><a href="#">Item Sub Two</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	</div> <!-- /.row -->
+		
+	<div class="row">	
+		<div class="twelve columns">
+	
+		{block:Posts}
+	
+		{block:Text}
+		<div class="post">
+			{block:Title}
+				<h3>
+					<a href="{Permalink}">{Title}</a>
+				</h3>
+			{/block:Title}
+			{Body}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+      		</ul>
+		</div> 
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Text}
+
+		{block:Photo} 
+		<div class="post">	
+			<img src="{PhotoURL-500}">
+			{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Photo}
+
+		{block:Quote}
+		<div class="post">
+			{Quote}
+	   	{block:Source}<br>&mdash;{Source}{/block:Source}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Quote}
+
+		{block:Link}
+		<div class="post">
+  			<a href="{URL}" {Target}>{Name}</a>
+  			{block:Description}{Description}{/block:Description}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Link}
+
+		{block:Chat}
+		<div class="post">
+			{block:Title}{Title}{/block:Title}
+			<table>
+				{block:Lines}
+				<tr>
+					<th>{block:Label}{Label}{/block:Label}</th>
+					<td>{Line}</td>
+				</tr>
+				{/block:Lines}
+			</table>
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Chat}
+
+		{block:Audio}
+		<div class="post">
+			{AudioPlayer}
+      		{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Audio}
+
+		{block:Video}
+		<div class="post">
+			{Video-500}
+			{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Video}
+	    
+        
+        <footer>
+		{block:IfShowTags}
+            {block:HasTags} 
+                <ul class="tags">
+                    {block:Tags}
+                    <li>
+                    <a href="{TagURL}">{Tag}</a>
+                    </li>
+                    {/block:Tags}
+                </ul>
+            {/block:HasTags}
+		{/block:IfShowTags}
+        </footer>
+        
+        <div id="specialinfo">
+            Posted by: {PostAuthorName}<br/>
+            {block:Date}
+                {block:IfTogglePostingDate}
+                On: {Year}-{Month}-{DayOfMonth}
+                {/block:IfTogglePostingDate}
+                {block:IfNotTogglePostingDate}
+                {TimeAgo}
+                {/block:IfNotTogglePostingDate}
+            {/block:Date}<br/>
+            Link: {PermaLink}
+        </div> <!-- /#specialinfo -->
+    
+		{/block:Posts}
+		
+		</div><!-- /.twelve.columns -->
+	</div><!-- /.row -->
+
+
+	<div class="row">
+	    <div class="twelve columns">
+		
+		{block:Pagination}
+		<div class="pagenav">
+		  {block:PreviousPage}<a href="{PreviousPage}">&larr;&nbsp;Previous</a>{/block:PreviousPage}
+            {block:IfJumpPaginationOn}
+            {block:JumpPagination length="5"}{block:CurrentPage}
+                        <span class="current_page">{PageNumber}</span>
+                    {/block:CurrentPage}{block:JumpPage}
+                        <a class="jump_page" href="{URL}">{PageNumber}</a>
+                    {/block:JumpPage}{/block:JumpPagination}
+	        {/block:IfJumpPaginationOn}
+		  {block:NextPage}<a href="{NextPage}">Next&nbsp;&rarr;</a>{/block:NextPage}
+		 </div>
+		{/block:Pagination}
+	
+	
+		</div><!-- /.twelve.columns -->
+	</div><!-- /.row -->
+
+
+</div> <!-- /.container -->
+</body>
+</html>

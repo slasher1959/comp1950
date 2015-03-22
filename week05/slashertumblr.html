@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{Title}</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<link href="../styles/styles.css" rel="stylesheet" type="text/css">
+	<style>
+	body {
+		font-family:  "Helvetica Neue", Helvetica, Arial, Sans-serif;
+		font-size:  16px;
+	}
+	#container {
+		width: 90%;
+		max-width:  800px;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+	<h1>{Title}</h1>
+    
+	{block:Description}
+	<h2>{Description}</h2>
+	{/block:Description}
+	
+	{block:Posts}
+	<div class="post">
+	  
+	  {block:Text}
+		<h3>{Title}</h3>
+		
+		{Body}
+		
+		
+	  {/block:Text}
+	  
+	  {block:Photo}
+		<img src="../{PhotoURL-500}">
+	  {/block:Photo}
+	
+	  <p>Published on</p>
+	</div>
+	{/block:Posts}
+
+	</div>	
+</body>
+
+</html>

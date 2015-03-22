@@ -1,0 +1,14 @@
+﻿/*#listings {
+}*/
+.listing-preview {
+  position: relative;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  max-width: 400px;
+  float: left;
+}
+.listingsh2, .listingsh3 {
+	text-align: center;
+	position: relative;
+	clear: both;
+}

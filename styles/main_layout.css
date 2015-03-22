@@ -1,0 +1,97 @@
+﻿/*CSS Stylesheet - Main Layout - Applies to all common site (template) element selectors and definitions*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+}
+#container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+}
+#header h1 {
+	text-align: center;
+	height: 60px;
+	padding-top: 15px;
+}
+#header img {
+	float: left;
+}
+#mainMenu {
+	font-size: 0.8em;
+	border: 1px solid #808080;
+}
+#mainMenu ul {
+	padding: 3px 0px 3px 0px;
+	margin: 0px;
+}
+#mainMenu li {
+	display: inline;
+}
+#mainMenu li a {
+	text-decoration: none;
+	color: #333333;
+	padding: 3px 10px 3px 10px;
+}
+#mainMenu li a:hover {
+	color: #FFFFFF;
+	background-color: #808080;
+}
+#pageBody {
+	margin-top: 5px;
+}
+.mainContent {
+	text-align: justify;
+}
+.mainContent ol li a {
+	text-decoration: none;
+	color: #CC3300;
+}
+.mainContent ol li a:hover {
+	color: #800000;
+	font-weight: bold;
+}
+#sidebar {
+	font-size: 0.8em;
+	border: 1px solid #808080;
+	padding: 10px;
+	width: 250px;
+	float: right;
+	margin-left: 10px;
+}
+#sidebar ul {
+	padding: 0px;
+	margin: 0px;
+}
+#sidebar ul li {
+	list-style-type: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #CCCCCC;
+	padding: 5px 10px 5px 10px;
+}
+#sidebar ul li a {
+	text-decoration: none;
+	color: #CC3300;
+}
+#sidebar ul li a:hover {
+	color: #800000;
+}
+#sidebar ul li:hover {
+	background-color: #CCCCCC;
+}
+#footer {
+	background-color: #333333;
+	font-size: 0.8em;
+	color: #CCCCCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	clear: both;
+}
+#footer a {
+	color: #CC0000;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #FF9900;
+}

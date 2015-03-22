@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+<meta name="color:Background" content="#ffffaf" />
+<meta name="color:Posts Background" content="#ffffff" />
+<meta name="font:Default Font" content="Helvetica" />
+<meta name="font:Heading Font" content="Helvetica" />
+<meta name="font:Post Font" content="Times New Roman" />
+
+<meta name="if:Social Bookmarks" content="1" />    <!-- boolean -->
+<meta name="if:Show Tags" content="1" />  
+
+<meta name="text:Twitter Username" content="" />   <!-- content -->
+
+
+<link rel="stylesheet" href="http://static.tumblr.com/yh93wej/nR0nket1q/skeleton.css" />
+<style>
+
+/****************************************/
+/******** Start of my CSS Styles ********/
+/****************************************/
+
+	header {
+		background: url(http://dash.ga.co/assets/gene-bg.png);
+		font-family: {font:Heading Font} ;
+	}
+	header a {
+		text-decoration: none;
+    	color: #fff;
+	}
+	header h1 {
+		display: inline;
+    	position: absolute;
+    	top: 60px;
+		font-size: 42px;
+		color: #fff;
+	}
+	header h2 {
+		display: inline;
+		color: #fff;
+		position: absolute;
+		top: 120px;
+		font-size: 20px;	
+	}
+	#secondheader {
+	  margin-top: 1em;
+	  position: relative;
+	}
+	#mymenu {
+		margin-bottom: 0px;
+	}
+	#subheader {
+	  background: url("http://students.thenet.ca/jelash/week06/ID-10038689.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+	  min-height: 100%;
+	  min-width: 74%;
+	  position: absolute;
+	}
+	body {
+		background: {color:Background};
+		font-family: {font:Default Font};
+	}
+	.post {
+		background: {color:Posts Background};
+		margin: 40px auto;
+		padding: 20px;
+		font-family: {font:Post Font};
+	}
+	.post > img {
+	  	width: 100%;
+	}
+	.avatar {
+    	margin: 60px 30px; 
+		border-radius: 100%;
+	}
+	.mycontainer {
+		max-width: 640px;
+		margin: 0 auto; 
+	}
+	.like-reblog {
+		list-style: none;
+		border: 1px solid #ccc;
+	}
+	.like-reblog li {
+		float: right;
+		padding: 6px;
+		height: 20px;
+	} 
+	.page {
+	  background: #222;
+	  padding: 20px;
+	  border-radius: 6px;
+	}
+	.page a {
+	  text-decoration: none;
+	  color: #eee;
+	}
+	.pagelist {
+	  margin: 0 auto;
+	  width: 640px;
+	}
+	.pagelist ul {
+	    display: inline;
+	}
+	.tags > li {
+  	display:  inline;
+	}
+	.page, .post, #subheader, header {
+	 border-radius: 6px;
+}
+	
+/* My Original Media query.    */
+@media only screen and (max-width: 760px) {
+	.mycontainer > h1 {
+		font-size: 2.0em;
+	}
+	.three.columns {
+	    width: 100%;
+	}
+	#secondheader #subheader {
+		display: none;
+	}
+
+}
+@media only screen and (max-width: 620px) {
+	.mycontainer > h1 {
+		font-size: 1.5em;
+	}
+	.mycontainer > h2 {
+		font-size: 1.15em;
+	}
+	.three.columns {
+	    width: 100%;
+	}
+	#secondheader #subheader {
+		display: none;
+	}
+	
+}
+@media only screen and (max-width: 400px) {
+	.mycontainer > h1 {
+		font-size: 1.5em;
+	}
+	.mycontainer > h2 {
+		display: none;
+	}
+	.three.columns {
+	    width: 100%;
+	}
+	#secondheader #subheader {
+		display: none;
+	}
+	
+}
+
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+	<div class="row">
+	    <div class="twelve columns">
+		
+		{block:IfSocialBookmarks}
+		<p>SOCIAL BOOKMARKS ARE ON BABY!</p>
+		{/block:IfSocialBookmarks}
+		
+        {block:IfTwitterUsername}
+            <p>Follow me on Twitter: 
+            <a href="http://twitter.com/{text:Twitter Username}">@{text:Twitter Username}</a> </p>
+        {/block:IfTwitterUsername}
+		
+				
+			<header>
+			<div class="mycontainer">
+				<img class="avatar" src="{PortraitURL-128}">
+				<h1><a href="{BlogURL}">{Title}</a></h1>
+				{block:Description}
+					<h2>{Description}</h2>
+				{/block:Description}
+			</div> <!-- /.mycontainer -->
+			</header>
+
+		</div><!-- /.twelve.columns -->
+	</div><!-- /.row -->
+	
+	<div class="row" id="secondheader">
+  
+	{block:HasPages}
+	<div class="three columns">
+		<nav >
+			<ul id="mymenu">
+				<div class="page">
+					<div class="pagelist">
+					   	<li><a href="http://jelash.tumblr.com">Home</a></li>
+					</div>
+					  {block:Pages}
+					  <div class="pagelist">
+					    <li><a href="{URL}">{Label}</a></li>
+					  </div>
+					  {/block:Pages}
+				</div>
+			</ul>
+		</nav>
+	</div><!-- /.three.columns -->	
+	
+	<div class="nine columns">
+		<div id="subheader">
+		</div> <!-- / #subheader -->	
+	</div><!-- /.nine.columns -->
+	
+	{/block:HasPages}
+	
+	</div> <!-- /.row -->
+	
+
+	<div class="row">	
+	<div class="twelve columns">
+	
+	{block:Posts}
+	
+		{block:Text}
+		<div class="post">
+			{block:Title}
+				<h3>
+					<a href="{Permalink}">{Title}</a>
+				</h3>
+			{/block:Title}
+			{Body}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+      		</ul>
+		</div> 
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Text}
+
+		{block:Photo} 
+		<div class="post">	
+			<img src="{PhotoURL-500}">
+			{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Photo}
+
+		{block:Quote}
+		<div class="post">
+			{Quote}
+	   	{block:Source}<br>&mdash;{Source}{/block:Source}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Quote}
+
+		{block:Link}
+		<div class="post">
+  			<a href="{URL}" {Target}>{Name}</a>
+  			{block:Description}{Description}{/block:Description}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Link}
+
+		{block:Chat}
+		<div class="post">
+			{block:Title}{Title}{/block:Title}
+			<table>
+				{block:Lines}
+				<tr>
+					<th>{block:Label}{Label}{/block:Label}</th>
+					<td>{Line}</td>
+				</tr>
+				{/block:Lines}
+			</table>
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Chat}
+
+		{block:Audio}
+		<div class="post">
+			{AudioPlayer}
+      		{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Audio}
+
+		{block:Video}
+		<div class="post">
+			{Video-500}
+			{block:Caption}{Caption}{/block:Caption}
+			<ul class="like-reblog">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+        		<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
+			</ul>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Video}
+	    
+        
+        <footer>
+			{block:IfShowTags}
+            {block:HasTags} 
+                <ul class="tags">
+                    {block:Tags}
+                    <li>
+                    <a href="{TagURL}">{Tag}</a>
+                    </li>
+                    {/block:Tags}
+                </ul>
+            {/block:HasTags}
+			{/block:IfShowTags}
+        </footer>
+        
+        <div id="specialinfo">
+            Posted by: {PostAuthorName}<br/>
+            On:  {block:Date}{Year}-{Month}-{DayOfMonth} {/block:Date}<br/>
+            Link: {PermaLink}
+        </div> <!-- /#specialinfo -->
+    
+		{/block:Posts}
+		
+		</div><!-- /.twelve.columns -->
+	</div><!-- /.row -->
+
+
+	<div class="row">
+	    <div class="twelve columns">
+		
+		{block:Pagination}
+		<div class="pagenav">
+		  {block:PreviousPage}<a href="{PreviousPage}">&larr;&nbsp;Previous</a>{/block:PreviousPage}
+		  {block:JumpPagination length="5"}{block:CurrentPage}
+	                    <span class="current_page">{PageNumber}</span>
+	                {/block:CurrentPage}{block:JumpPage}
+	                    <a class="jump_page" href="{URL}">{PageNumber}</a>
+	                {/block:JumpPage}{/block:JumpPagination}
+		  {block:NextPage}<a href="{NextPage}">Next&nbsp;&rarr;</a>{/block:NextPage}
+		 </div>
+		{/block:Pagination}
+	
+	
+		</div><!-- /.twelve.columns -->
+	</div><!-- /.row -->
+
+	</div>
+</body>
+</html>

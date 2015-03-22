@@ -1,0 +1,136 @@
+﻿/*CSS Stylesheet - Main Layout - Applies to all common site (template) element selectors and definitions*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+}
+#container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+}
+#container header span {
+	font-size: medium; 
+	font-style: italic;
+	padding-left: 100px;
+}
+#container header p {
+	margin-top: 0px;
+}
+#container header p span {
+	font-size: 0.8em;
+	padding-left:  50px;
+}
+.clearfix {   /*used to help align/clear sections, divs, any box items*/
+	clear:both;
+	height: 5px;
+}
+header {
+	height: auto;
+	z-index: 1;
+}
+header h1 {
+	height: 40px;
+	padding-top: 35px;
+	margin-bottom: 11px;
+}
+header img {
+	float: left;
+}
+
+nav {
+	font-size: 0.8em;
+	border: 1px solid #808080;
+	clear: both;
+	height: 30px;
+	z-index: 10;
+	position: relative;
+}
+
+nav {
+	font-size: 0.8em;
+	border: 1px solid #808080;
+	clear: both;
+	height: 30px;
+	z-index: 10;
+	position: relative;
+	background-color: #808080;
+}
+
+.mainContent {
+	text-align: justify;
+	z-index: 0;
+}
+main {
+	text-align: justify;
+	z-index: 0;
+}
+
+.mainContent ol li a {
+	text-decoration: none;
+	color: #CC3300;
+}
+.mainContent ol li a:hover {
+	color: #800000;
+	font-weight: bold;
+}
+aside {
+	font-size: 0.8em;
+	border: 1px solid #808080;
+	padding: 10px;
+	width: 250px;
+	float: right;
+	margin-left: 10px;
+}
+aside figure {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+aside h2 {
+	text-align: center;
+}
+aside ul {
+	padding: 0px;
+	margin: 0px;
+}
+aside ul li {
+	list-style-type: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #CCCCCC;
+	padding: 5px 10px 5px 10px;
+}
+aside ul li a {
+	text-decoration: none;
+	color: #CC3300;
+}
+aside ul li a:hover {
+	color: #800000;
+}
+aside ul li:hover {
+	background-color: #CCCCCC;
+}
+footer {
+	background-color: #333333;
+	font-size: 0.8em;
+	color: #CCCCCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	clear: both;
+}
+footer nav, footer div a {
+    font-size: 0.8em;
+    border: 1px solid #808080;
+    clear: both;
+    height: 15px;
+    position: relative;
+    color: #FFFFFF;
+    background-color: #808080;
+}
+footer a {
+	color: #FFFFFF;  
+	text-decoration: none;
+}
+footer a:hover {
+	color: #FF9900;
+}

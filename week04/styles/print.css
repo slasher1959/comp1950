@@ -1,0 +1,15 @@
+﻿/*	
+@import url('resethtml5.css');	
+*/
+nav {
+	display:none;
+}
+header img {
+	float: none;
+}
+aside{
+	float: left;
+}
+.listing-preview	{
+	float:none;
+}
